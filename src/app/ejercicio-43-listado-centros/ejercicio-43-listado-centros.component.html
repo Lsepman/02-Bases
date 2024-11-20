@@ -1,0 +1,42 @@
+<body>
+    <h2>LISTADO DE CENTROS</h2>
+  <div class="card-text-bg-primary mb-3">
+    <div class="card-body" *ngIf="centrosEducativos[indice]" >
+      <img [src]="centrosEducativos[indice].logo" class="card-img.top" alt="{{centrosEducativos[indice].logo}} " width="250" height="200">
+      <h4 class="card-title"><strong>Centro:</strong><small class="text-danger"><p>{{centrosEducativos[indice].nombre}}</p></small></h4>
+      <h4 class="card-text"><strong>Localidad:</strong><p><small class="text-danger">{{centrosEducativos[indice].localidad}}</small></p></h4>
+      <h4 class="card-text"><strong>Familias profesionales:</strong><p><small class="text-danger">{{centrosEducativos[indice].familiasProfesionales}}</small></p></h4>
+    </div>
+  </div>
+
+  <button *ngIf="indice !=0 && centrosEducativos.length !=0" type="button" (click)="centroAnterior()" class="btn btn-outline-danger">Anterior</button>
+
+  <button *ngIf="centrosEducativos.length !=0 " (click)="eliminarUltimoCentro()" type="button" class="btn btn-outline-danger" ng-click="click()">Borrar ultimo centro</button>
+
+  <button *ngIf="pilaCentros.length !=0" type="button" (click)="insertarCentro()" class="btn btn btn-outline-danger">Insertar Centro</button>
+
+  <button *ngIf="indice != centrosEducativos.length -1 && centrosEducativos.length !=0" type="button" (click)="centroSiguiente()" class="btn btn-outline-danger">Siguiente</button>
+
+  <div *ngIf=" centroAniadido; else nadaQueAniadir">
+    <h4>Centro añadido<small class="text-danger">{{centroAniadido.nombre}}</small></h4>
+  </div>
+
+  <div *ngIf="centroEliminado; else nadaQueBorrar">
+    <h4>Centro eliminado<small class="text-danger">{{centroEliminado.nombre}}</small></h4>
+  </div>
+
+  <ng-template #nadaQueBorrar>
+    <h4>No ha eliminado ningún Centro</h4>
+  </ng-template>
+
+  <ng-template #nadaQueAniadir>
+    <h4>No se ha insertado ningun centro</h4>
+  </ng-template>
+
+  <h2>LISTADO DE CENTROS PILA</h2>
+
+    <div class="card-text">
+      <h4 *ngFor="let centro of pilaCentros" class="list-group-item"><small class="text-danger">{{centro.nombre}}</small></h4>
+    </div>
+</body>
+

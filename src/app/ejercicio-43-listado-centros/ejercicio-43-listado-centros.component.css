@@ -1,0 +1,42 @@
+@font-face {
+  font-family: jingle;
+  src: url(Christmas\ Bell\ -\ Personal\ Use.otf);
+}
+@font-face {
+  font-family: bells;
+  src: url(MerryChristmasFlake.ttf);
+}
+@font-face {
+  font-family: jojo;
+  src: url(Christmas\ Squad\ -\ Personal\ Use.otf);
+}
+@font-face {
+  font-family: jiji;
+  src: url(MerryChristmasStar.ttf);
+}
+@font-face {
+  font-family: jeje;
+  src: url(Red\ Christmas\ -\ Personal\ Use.otf);
+}
+
+body{
+  background-color:rgb(190, 185, 114);
+  text-align: center;
+}
+.card{
+  width: 30rem;
+  font-size: 20px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+body h4{
+
+  font-size: 20px;
+  font-style: oblique;
+  font-family:'Lucida Sans';
+}
+
+body h2{
+  font-size: 72px;
+  font-family: 'bells';
+}

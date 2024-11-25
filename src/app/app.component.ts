@@ -5,6 +5,7 @@ import { Ejercicio43ListadoCentrosComponent } from "./ejercicio-43-listado-centr
 
 import { ContadorModule } from './contador/contador.module';
 import { HeroeModule } from './heroes/heroes.module';
+import { DbzModule } from './dbz/dbz.module';
 
 
 @Component({
@@ -12,7 +13,7 @@ import { HeroeModule } from './heroes/heroes.module';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [Ejercicio42Component,Ejercicio43ListadoCentrosComponent, ContadorModule,HeroeModule]
+  imports: [Ejercicio42Component,Ejercicio43ListadoCentrosComponent, ContadorModule,HeroeModule,DbzModule]
 })
 export class AppComponent {
   public title = 'Mi primera aplicacion con contador';

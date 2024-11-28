@@ -29,7 +29,7 @@ export class MainPageComponent implements OnInit {
 
 public onNewPersonaje(personaje: Personaje): void{
   console.log("MainPage")
-  console.log
+  console.log(personaje)
 
 }
   constructor() { }

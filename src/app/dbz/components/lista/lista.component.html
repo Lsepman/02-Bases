@@ -5,15 +5,19 @@
     let esUltimo=last,
     let esPrimero=first,
     let esImpar=odd"
-    class="list-group-item" [ngClass]="{
+    class="list-group-item d-flex justify-content-between align-items-center" [ngClass]="{
     'list-group-item-info': esImpar,
     'list-group-item-primary': esPar,
     'list-group-item-warning': esPrimero,
-    'list-group-item-danger': esUltimo
+    'list-group-item-danger': esUltimo,
+
     }">
       <span>{{personaje.nombre}} - </span>
       <span><strong>Fuerza: </strong>{{personaje.fuerza}}</span>
-      <span> Indice: {{i}} es par: {{ esPar}}- es ultimo: {{esUltimo}}</span>
+      <span> Indice: {{i + 1}} es par: {{ esPar}}- es ultimo: {{esUltimo}}</span>
+      <!--Con el click cogemos llamamos a la funcion pasarIndice y capturamos el indice-->
+    <button class="btn btn-danger" (click)="pasarIndice(i)" >X</button>
+
     </li>
 
   </ul>

@@ -4,11 +4,13 @@
 <div class="row">
   <div class="col">
     <!--<dbz-lista></dbz-lista> Aqui se muestran los personajes  por defecto que tiene la componente lista component.ts -->
-    <dbz-lista [listaPersonajes]="personajes"></dbz-lista><!--Aqui le estoy diciendo que en lista personaje me meta los personajes que he creado en el main page component en una lista-->
+    <!--Aqui se añade al evento onDeletePersonaje y se llama a la funcion de la clase lista.component.ts que nos emite un indice la lista-->
+    <dbz-lista [listaPersonajes]="personajes" (onDeletePersonaje)="onDeletePersonaje($event)"></dbz-lista><!--Aqui le estoy diciendo que en lista personaje me meta los personajes que he creado en el main page component en una lista-->
   </div>
 
 
   <div class="col">
+    <!--Aqui se añade el evento onNewPersonaje y se llama a la funcion creada en la add-personaje.component.ts-->
     <dbz-add-personaje (onNewPersonaje)="onNewPersonaje($event)"></dbz-add-personaje>
   </div>
 

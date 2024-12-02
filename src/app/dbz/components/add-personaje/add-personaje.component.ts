@@ -9,6 +9,7 @@ import { Personaje } from '../../interfaces/personaje.interface';
 })
 export class AddPersonajeComponent {
 
+  //!Creamos el evento
     @Output()
     public onNewPersonaje: EventEmitter<Personaje>= new EventEmitter();
 
@@ -18,13 +19,21 @@ export class AddPersonajeComponent {
   }
 
   public addPersonaje(): void{
+
+    debugger;
+
     console.log(this.personaje)
     if (this.personaje.nombre.length === 0) return;
 
+    //!Para no pasar la referencia se crea un nuevo personaje con los valores vacios en este caso
     this.onNewPersonaje.emit(this.personaje);
+    this.personaje ={
+      nombre: '',
+      fuerza: 0
+    };
 
-    this.personaje.nombre="";
-    this.personaje.fuerza=0;
+    //this.personaje.nombre="";
+    //this.personaje.fuerza=0;
   }
 
 }

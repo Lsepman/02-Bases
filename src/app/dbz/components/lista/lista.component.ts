@@ -1,5 +1,6 @@
-import { Component, Input, input } from '@angular/core';
-import { Personaje } from '../../interfaces/personaje.interface';
+import { Personaje } from './../../interfaces/personaje.interface';
+import { Component, EventEmitter, Input, input, Output } from '@angular/core';
+
 
 @Component({
   selector: 'dbz-lista',
@@ -9,6 +10,7 @@ import { Personaje } from '../../interfaces/personaje.interface';
 })
 export class ListaComponent {
 
+  //!Input para recibir posibles eventos
   @Input() //Input es un decorador que nos permite recibir informacion de un componente padre a un componente hijo
   public listaPersonajes: Personaje[]= [
     {nombre: 'Trunks',
@@ -16,4 +18,20 @@ export class ListaComponent {
     }
   ];
 
-}
+//!Output para emitir eventos.
+  @Output()
+  public onDeletePersonaje: EventEmitter<number>= new EventEmitter();
+
+  //!Recibe el indice de la lista. Se recibe desde lista.component.html que se genera con el onclick el indice recibido por ngfor
+  public pasarIndice(indice: number): void{
+    //!Recibe el indice por parametro y lo emite.
+    this.onDeletePersonaje.emit(indice)
+  }
+
+
+
+
+  }
+
+
+

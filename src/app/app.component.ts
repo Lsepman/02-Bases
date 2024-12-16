@@ -13,7 +13,7 @@ import { DbzModule } from './dbz/dbz.module';
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
-  imports: [ContadorModule, HeroeModule, DbzModule]
+  imports: [Ejercicio42Component,Ejercicio43ListadoCentrosComponent, ContadorModule,HeroeModule,DbzModule]
 })
 export class AppComponent {
   public title = 'Mi primera aplicacion con contador';

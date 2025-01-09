@@ -14,13 +14,12 @@ export class AddPersonajeComponent {
     public onNewPersonaje: EventEmitter<Personaje>= new EventEmitter();
 
     public personaje: Personaje={
+    id: "",
     nombre: '',
     fuerza: 0
   }
 
   public addPersonaje(): void{
-
-    debugger;
 
     console.log(this.personaje)
     if (this.personaje.nombre.length === 0) return;
@@ -28,6 +27,7 @@ export class AddPersonajeComponent {
     //!Para no pasar la referencia se crea un nuevo personaje con los valores vacios en este caso
     this.onNewPersonaje.emit(this.personaje);
     this.personaje ={
+      id: "",
       nombre: '',
       fuerza: 0
     };

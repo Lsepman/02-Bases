@@ -10,6 +10,16 @@ import { DbzService } from '../services/dbz.service';
 export class MainPageComponent {
 
   //Dentro del constructor instanciamos dbzService, donde llamamos a un servicio
-  constructor(public dbzService: DbzService) { }
+  constructor(private dbzService: DbzService){}
+  //Creamos un get que nos va a devolver un array de personajes y lo hacemos porque al poner el servicio privado tenemos que crearlo para poder hacer uso
+  get personajes(): Personaje[]{
+    return this.dbzService.personajes;
+  }
+  deletePersonaje(id: string): void{
+    this.dbzService.deletePersonaje(id);
+  }
+  addPersonaje (personaje: Personaje){
+    this.dbzService.addPersonaje(personaje)
+  }
 
 }

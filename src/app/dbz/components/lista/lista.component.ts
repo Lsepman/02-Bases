@@ -12,25 +12,21 @@ export class ListaComponent {
 
   //!Input para recibir posibles eventos
   @Input() //Input es un decorador que nos permite recibir informacion de un componente padre a un componente hijo
-  public listaPersonajes: Personaje[]= [
-    {
-      nombre: 'Trunks',
-      fuerza: 10000
-    }
-  ];
+  public listaPersonajes: Personaje[]= [];
 
 //!Output para emitir eventos.
   @Output()
-  public onDeletePersonaje: EventEmitter<number>= new EventEmitter();
+  //public onDeletePersonaje: EventEmitter<number>= new EventEmitter();
+  public onDeletePersonaje: EventEmitter<string>= new EventEmitter();
+
 
   //!Recibe el indice de la lista. Se recibe desde lista.component.html que se genera con el onclick el indice recibido por ngfor
-  public pasarIndice(indice: number): void{
+  /*public pasarIndice(indice: number): void{
     //!Recibe el indice por parametro y lo emite.
-    this.onDeletePersonaje.emit(indice)
+    this.onDeletePersonaje.emit(indice)*/
+  public pasarId(id: string): void{
+      this.onDeletePersonaje.emit(id)
   }
-
-
-
 
   }
 

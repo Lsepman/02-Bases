@@ -34,12 +34,23 @@ export class DbzService {
 public addPersonaje(personaje: Personaje): void{
   //console.log("MainPage")
   //console.log(personaje)
-  const newPersonaje: Personaje = {id: uuid(),...personaje} //...personaje es igual que poner nombre: personaje.nombre, fuerza: personaje.fuerza. 
+  //const newPersonaje: Personaje = {id: uuid(),...personaje} //...personaje es igual que poner nombre: personaje.nombre, fuerza: personaje.fuerza.
+  //public newPersonaje (personaje: Omit<Personaje, id>): void{
+  // const newPersonaje: Personaje = {id: uuid(),...personaje}
+  //this.personajes.push(newPersonaje)
+  const newPersonaje: Personaje = {
+    id: uuid(),
+    nombre: personaje.nombre,
+    fuerza: personaje.fuerza
+  };
   this.personajes.push(newPersonaje)
 }
 //!Metodo para eliminar personaje que se pasa por indice recibido. Usamos el splice donde indicamos el indice que queremos eliminar e indicamos que solo queremos eliminar 1
-public deletePersonaje(indice: number): void{
+/*public deletePersonaje(indice: number): void{
   this.personajes.splice(indice,1)
+}*/
+public deletePersonaje(id: string): void {
+  this.personajes= this.personajes.filter(personaje => personaje.id !== id);
 }
 
 

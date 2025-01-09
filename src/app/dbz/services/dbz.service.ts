@@ -27,6 +27,11 @@ export class DbzService {
     id: uuid(),
     nombre: 'Piccolo',
     fuerza: 100
+    },
+    {
+    id: uuid(),
+    nombre: 'Joshua',
+    fuerza: -3
     }
   ];
 
